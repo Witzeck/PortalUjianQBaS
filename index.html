@@ -1,0 +1,343 @@
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal Ujian Santri - Qur'an Global Sains SMP Baitussalam 3</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f9f9f9;
+      padding: 50px;
+      color: #2c3e50;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 5px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: normal;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+      width: 300px;
+      max-width: 90%;
+    }
+    button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .link-ujian {
+      margin-top: 20px;
+      display: none;
+    }
+    a {
+      display: block;
+      margin: 15px auto;
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      width: 300px;
+      max-width: 90%;
+    }
+    a:hover {
+      background-color: #2980b9;
+    }
+    #pesanError {
+      color: red;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Portal Ujian Santri</h1>
+  <h2>Qur'an Global Sains SMP Baitussalam 3</h2>
+  <p>Selamat datang di portal Asesmen Sumatif Semester Gasal Tahun Ajaran 2025/2026.</p>
+  <p>Masukkan token ujian untuk membuka soal:</p>
+
+  <input type="text" id="tokenInput" placeholder="Input token disini">
+  <button onclick="cekToken()">Kirim</button>
+
+  <div class="link-ujian" id="linkUjianMatematika7">
+    <a href="https://drive.google.com/file/d/1yHbCOyoylOMmzjYpGoKUhOoMthwpxrWt/preview" target="_blank">Ujian Matematika Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianMatematika8">
+    <a href="https://drive.google.com/file/d/1svYoytXMviLLTABXyqz4Ul0bjwfs-JT6/preview" target="_blank">Ujian Matematika Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianMatematika9">
+    <a href="https://drive.google.com/file/d/1kQ1jmQOXiJ6Lb9Tq2Fu4nzvKXcusH_Jy/preview" target="_blank">Ujian Matematika Kelas 9</a>
+  </div>
+  <div class="link-ujian" id="linkUjianBinggris7">
+    <a href="https://drive.google.com/file/d/1dJnb_qBpO8RsLOhXLvppS_eVysKG4JXZ/preview" target="_blank">Ujian Bahasa Inggris Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianBinggris8">
+    <a href="https://drive.google.com/file/d/1h-PUjWNDddOcGFaJ02zHOrebnHte4dHJ/preview" target="_blank">Ujian Bahasa Inggris Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianBinggris9">
+    <a href="https://drive.google.com/file/d/1ILHz6NFyRvql7tUur9TXzLJMwypbqS2d/preview" target="_blank">Ujian Bahasa Inggris Kelas 9</a>
+  </div>
+  <div class="link-ujian" id="linkUjianIPA7">
+    <a href="https://drive.google.com/file/d/1vIj3JOI8gzEXDgtzXfMyTv68BRr_zHpy/preview" target="_blank">Ujian IPA Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianIPA8">
+    <a href="https://drive.google.com/file/d/16tgzFNtwCVFFzz7ST-bQdqD-Kwn4tLoA/preview" target="_blank">Ujian IPA Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianIPA9">
+    <a href="https://drive.google.com/file/d/18ISkPt3WuyXwM3E9DxnHvvyY0A71HhFX/preview" target="_blank">Ujian IPA Kelas 9</a>
+  </div>
+  <div class="link-ujian" id="linkUjianBindo7">
+    <a href="https://drive.google.com/file/d/1XP8rzqM3ziE2nLkqlMbLFlYc96Cxe-eR/preview" target="_blank">Ujian Bahasa Indonesia Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianBindo8">
+    <a href="https://drive.google.com/file/d/1F8P3kZmT37t3GcvRDwxjLxrDGrnzJxYk/preview" target="_blank">Ujian Bahasa Indonesia Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianPP7">
+    <a href="https://drive.google.com/file/d/1qkcuajfZdl28_QMJEEulFuJ-83ilWYtg/preview" target="_blank">Ujian Pendidikan Pancasila Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianPP8">
+    <a href="https://drive.google.com/file/d/1lW0X6GwRKFRqqGMYS48obnmjF5EN4d_f/preview" target="_blank">Ujian Pendidikan Pancasila Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianTIK7">
+    <a href="https://forms.gle/iPidoEMkPj6wziBt6" target="_blank">Ujian TIK Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianTIK8">
+    <a href="https://docs.google.com/spreadsheets/d/1M-b70bVsLfeFF6y6X1kuPCI6BjRNngd9ryoCQMfgJI4/edit?usp=sharing" target="_blank">Ujian TIK Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianBarab7">
+    <a href="https://drive.google.com/file/d/1iCtkB_HGc67D0HSrY-9Dmk3CJoAdnezF/preview" target="_blank">Ujian Bahasa Arab Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianBarab8">
+    <a href="https://drive.google.com/file/d/1fDhzomqxBJLKlZoD-MYlIlZrgdXh5om2/preview" target="_blank">Ujian Bahasa Arab Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianBarab9">
+    <a href="https://drive.google.com/file/d/1ZN4s03f5NtRiT9A5bit3omrhIVDqU65F/preview" target="_blank">Ujian Bahasa Arab Kelas 9</a>
+  </div>
+  <div class="link-ujian" id="linkUjianQH7">
+    <a href="https://drive.google.com/file/d/1vW6coVoWgzkE5OcxnICXsSgu9Xb--iBx/preview" target="_blank">Ujian Quran Hadits Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianQH8">
+    <a href="https://drive.google.com/file/d/1vSoKzUXXGIb17fh4gwJVpJ-xW_A6ZkVJ/preview" target="_blank">Ujian Quran Hadits Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianFiqih7">
+    <a href="https://drive.google.com/file/d/1vOa_YvIzJkc6BtdDyHRVRBfg_XXlD_7_/preview" target="_blank">Ujian Fiqih Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianFiqih8">
+    <a href="https://drive.google.com/file/d/1vR1nx-riKvGzvLkL1HnM80ZVqJmieb1K/preview" target="_blank">Ujian Fiqih Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianAQ7">
+    <a href="https://drive.google.com/file/d/1bmQ8PNYkkssx9oBMEtn_S6g8nt5T9XMo/preview" target="_blank">Ujian Aqidah Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianAQ8">
+    <a href="https://drive.google.com/file/d/145nohmU03KQFi8dKzhPhBlQzdh_gc0-w/preview" target="_blank">Ujian Aqidah Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianBJ7">
+    <a href="https://drive.google.com/file/d/1dQWNyOCmNnDP2DhBCnFTmMGWHaMEzhv7/preview" target="_blank">Ujian Bahasa Jawa Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianBJ8">
+    <a href="https://drive.google.com/file/d/1UlpJYyrAo-Y0zzSvcY4Hv7GBuHJcl63Q/preview" target="_blank">Ujian Bahasa Jawa Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianBJ9">
+    <a href="https://drive.google.com/file/d/1cKuEXaxb5c0FHg7c9q9bW4LVdGW2xOed/preview" target="_blank">Ujian Bahasa Jawa Kelas 9</a>
+  </div>
+  <div class="link-ujian" id="linkUjianSB7">
+    <a href="https://drive.google.com/file/d/1mYqEqmdoefxTONi2VNXz8wVhIAuZWDhd/preview" target="_blank">Ujian Seni Budaya Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianSB8">
+    <a href="https://drive.google.com/file/d/1epOSVhg2KvzdJ5YvSlP8eua8-rxYGi1A/preview" target="_blank">Ujian Seni Budaya Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianPJOK7">
+    <a href="https://drive.google.com/file/d/1mZA6PRTbYlzdsNRBTEX-cS2EtGSGdstt/preview" target="_blank">Ujian PJOK Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianPJOK8">
+    <a href="https://drive.google.com/file/d/1VYGEwXRvhlr1_ilXWO2982psiSv9oPuJ/preview" target="_blank">Ujian PJOK Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianPAI7">
+    <a href="https://drive.google.com/file/d/1lQG-Ljf6-e2Q6V0iK0nzgEfjlC_kwOU4/preview" target="_blank">Ujian PAI Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianPAI8">
+    <a href="https://drive.google.com/file/d/1dBvUPAq4vhlc1H30jfl1ObJJddi1sKD0/preview" target="_blank">Ujian PAI Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianPAI9">
+    <a href="https://drive.google.com/file/d/1XsWUkXuWDJpL1FSRj3D4Z46EmDUiLbXc/preview" target="_blank">Ujian PAI Kelas 9</a>
+  </div>
+  <div class="link-ujian" id="linkUjianIPS7">
+    <a href="https://drive.google.com/file/d/1HfSXS1XyVwwarY8maRFcsawnJyVxoUEv/preview" target="_blank">Ujian IPS Kelas 7</a>
+  </div>
+  <div class="link-ujian" id="linkUjianIPS8">
+    <a href="https://drive.google.com/file/d/1g_hVv7NnisEDggjrS-m4qT9AYg_WWsOu/preview" target="_blank">Ujian IPS Kelas 8</a>
+  </div>
+  <div class="link-ujian" id="linkUjianIPS9">
+    <a href="https://drive.google.com/file/d/1Eb_Bz_NbGjDofNqL57CDSb98f5o6MPY6/preview" target="_blank">Ujian IPS Kelas 9</a>
+  </div>
+  <div class="link-ujian" id="linkUjianKKA7">
+    <a href="https://forms.gle/TpWofLhGN33L4jn78" target="_blank">Ujian KKA Kelas 7</a>
+  </div>
+
+  <p id="pesanError"></p>
+
+  <script>
+    function cekToken() {
+      const token = document.getElementById("tokenInput").value.trim().toUpperCase();
+      const pesan = document.getElementById("pesanError");
+
+      // Sembunyikan semua link
+      document.querySelectorAll('.link-ujian').forEach(el => el.style.display = "none");
+      pesan.textContent = "";
+
+      // Cek token
+      switch(token) {
+        case "MT07RF":
+          document.getElementById("linkUjianMatematika7").style.display = "block";
+          break;
+		case "MT08RF":
+          document.getElementById("linkUjianMatematika8").style.display = "block";
+          break;
+		case "MT09RF":
+          document.getElementById("linkUjianMatematika9").style.display = "block";
+          break;
+        case "UT7LPA":
+          document.getElementById("linkUjianBinggris7").style.display = "block";
+          break;
+		case "CPJW4M":
+          document.getElementById("linkUjianBinggris8").style.display = "block";
+          break;
+		case "L8UVNB":
+          document.getElementById("linkUjianBinggris9").style.display = "block";
+          break;
+        case "PA07AF":
+          document.getElementById("linkUjianIPA7").style.display = "block";
+          break;
+		case "PA08AF":
+          document.getElementById("linkUjianIPA8").style.display = "block";
+          break;
+		case "PA09AF":
+          document.getElementById("linkUjianIPA9").style.display = "block";
+          break;
+		case "BI07NA":
+          document.getElementById("linkUjianBindo7").style.display = "block";
+          break;
+		case "BI08NA":
+          document.getElementById("linkUjianBindo8").style.display = "block";
+          break;
+        case "ANH5PE":
+          document.getElementById("linkUjianPP7").style.display = "block";
+          break;
+		case "B81106":
+          document.getElementById("linkUjianPP8").style.display = "block";
+          break;
+		case "PL5WN3":
+          document.getElementById("linkUjianTIK7").style.display = "block";
+          break;
+		case "3YEBJS":
+          document.getElementById("linkUjianTIK8").style.display = "block";
+          break;
+		case "BA07DR":
+          document.getElementById("linkUjianBarab7").style.display = "block";
+          break;
+		case "BA08DR":
+          document.getElementById("linkUjianBarab8").style.display = "block";
+          break;
+		case "BA09DR":
+          document.getElementById("linkUjianBarab9").style.display = "block";
+          break;
+		case "N39KT2":
+          document.getElementById("linkUjianQH7").style.display = "block";
+          break;
+		case "9P2J8S":
+          document.getElementById("linkUjianQH8").style.display = "block";
+          break;
+		case "B70506":
+          document.getElementById("linkUjianFiqih7").style.display = "block";
+          break;
+		case "B80506":
+          document.getElementById("linkUjianFiqih8").style.display = "block";
+          break;
+		case "A70506":
+          document.getElementById("linkUjianAQ7").style.display = "block";
+          break;
+		case "A80506":
+          document.getElementById("linkUjianAQ8").style.display = "block";
+          break;
+		case "BJ07SC":
+          document.getElementById("linkUjianBJ7").style.display = "block";
+          break;
+		case "BJ08SC":
+          document.getElementById("linkUjianBJ8").style.display = "block";
+          break;
+		case "BJ09SC":
+          document.getElementById("linkUjianBJ9").style.display = "block";
+          break;
+		case "B71306":
+          document.getElementById("linkUjianSB7").style.display = "block";
+          break;
+		case "B81306":
+          document.getElementById("linkUjianSB8").style.display = "block";
+          break;
+		case "J8WN43":
+          document.getElementById("linkUjianPJOK7").style.display = "block";
+          break;
+		case "PL4E3X":
+          document.getElementById("linkUjianPJOK8").style.display = "block";
+          break;
+		case "PAI07Q":
+          document.getElementById("linkUjianPAI7").style.display = "block";
+          break;
+		case "PAI08Q":
+          document.getElementById("linkUjianPAI8").style.display = "block";
+          break;
+		case "PAI09Q":
+          document.getElementById("linkUjianPAI9").style.display = "block";
+          break;
+		case "5A7UC4":
+          document.getElementById("linkUjianIPS7").style.display = "block";
+          break;
+		case "Q2N5X6":
+          document.getElementById("linkUjianIPS8").style.display = "block";
+          break;
+		case "7QDKJA":
+          document.getElementById("linkUjianIPS9").style.display = "block";
+          break;
+		case "6TSMB7":
+          document.getElementById("linkUjianKKA7").style.display = "block";
+          break;
+        default:
+          pesan.textContent = "Token salah atau belum waktunya ujian.";
+      }
+    }
+  </script>
+
+</body>
+</html>
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
